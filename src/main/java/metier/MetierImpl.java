@@ -1,0 +1,15 @@
+package metier;
+import dao.IDao;
+import org.springframework.stereotype.Service;
+@Service
+public class MetierImpl implements IMetier{
+    private final IDao dao;
+    public MetierImpl(IDao dao) {
+        this.dao = dao;
+    }
+
+    @Override
+    public double calcul() {
+        double valeur = dao.getValue();return valeur * 2.0;
+    }
+}
